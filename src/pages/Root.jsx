@@ -1,16 +1,15 @@
 import { useReducer, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import userReducer from "../action/UserAction";
+import userReducer, { USER_ACTION } from "../action/UserAction";
 import UserContext from "../context/userContext";
 
 const Root = () => {
-    const baseData = {
+
+    const [userData, userDispatch] = useReducer(userReducer, {
         username:'',
         isAuthenticated:true,
         userId:''
-    };
-
-    const [userData, userDispatch] = useReducer(userReducer,baseData);
+    });
 
     return ( 
         <div id="main">
@@ -18,7 +17,7 @@ const Root = () => {
             <nav>
                 <NavLink to="/">Home</NavLink>
                 {
-                userData.isAuthenticated 
+                userData.isAuthenticated == true
                 ?
                     <>
                          <NavLink to="auth/logout">Logout</NavLink>
