@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import userReducer, { USER_ACTION } from "../action/UserAction";
 import UserContext from "../context/userContext";
@@ -10,6 +10,12 @@ const Root = () => {
         isAuthenticated:false,
         userId:''
     });
+
+    useEffect(()=>{
+        if(userData.isAuthenticated){
+            localStorage.setItem('userdata',JSON.stringify(userData));
+        }
+    },[userData.isAuthenticated]);
 
     return ( 
         <div id="main">
