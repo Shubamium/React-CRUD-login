@@ -6,6 +6,7 @@ import Root from './pages/Root';
 import Auth from './pages/Auth';
 import Dashboard from './pages/Dashboard';
 import Logout from './action/Logout';
+import Login, { loginAction } from './pages/Login';
 
 
 const router = createBrowserRouter(
@@ -13,7 +14,7 @@ const router = createBrowserRouter(
     <Route path='/' element={<Root/>}>
       <Route path='home' element={<Home/>}></Route>
       <Route path='auth'>
-        <Route path='login' index element={<Auth/>}/>
+        <Route path='login' index element={<Login/>} action={loginAction}/>
         <Route path='logout' element={<Logout />}/>
         <Route path='register' element={<Auth/>}/>
       </Route>
