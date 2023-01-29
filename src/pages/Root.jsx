@@ -7,7 +7,7 @@ const Root = () => {
 
     const [userData, userDispatch] = useReducer(userReducer, {
         username:'',
-        isAuthenticated:true,
+        isAuthenticated:false,
         userId:''
     });
 
@@ -20,7 +20,7 @@ const Root = () => {
                 userData.isAuthenticated == true
                 ?
                     <>
-                         <NavLink to="auth/logout">Logout</NavLink>
+                        <NavLink to="auth/logout">Logout</NavLink>
                         <NavLink to="dashboard">Dashboard</NavLink>
                     </>
                 :

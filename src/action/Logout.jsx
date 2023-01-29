@@ -7,7 +7,6 @@ const Logout = () => {
    const {userData, userDispatch} = useContext(UserContext);
    useEffect(()=>{
         console.log('hi');
-        // console.log(userData);
         if(userData){
             userDispatch({type:USER_ACTION.LOGOUT});
         }

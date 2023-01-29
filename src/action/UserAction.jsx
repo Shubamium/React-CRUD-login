@@ -16,7 +16,7 @@ export default function userReducer(state,action){
             return {
                 username: action.data.username,
                 isAuthenticated:true,
-                userId: action.data.username.userId
+                userId: action.data.userId
             };
         case USER_ACTION.LOGOUT:
             return baseLogin;

@@ -1,29 +1,56 @@
 import { useContext, useEffect } from "react";
-import { Form, Navigate, useActionData } from "react-router-dom";
+import { Form, Navigate, redirect, useActionData } from "react-router-dom";
+import { USER_ACTION } from "../action/UserAction";
 import UserContext from "../context/userContext";
 
 const Login = () => {
-    const {userData} = useContext(UserContext);
+    const {userData,userDispatch} = useContext(UserContext);
     const result = useActionData();
 
     console.log(userData);
     if(userData.isAuthenticated){
         return <Navigate to="/" />
     }
+
+    if(result && result.login){
+        console.log(result);
+        // userDispatch({type:USER_ACTION.LOGIN,data:{userId:result.userId,username:result.username}});
+    }
+
     return ( 
         <Form action="/auth/login" method="POST">
             <input type="text" name="username" placeholder="username. . ."  required/>
             <input type="password" name="password" placeholder="password. . ." required />
             <button type="submit">Login</button>
-            {result && <p>{result.username + result.password}</p>}
+            {result && result.error && <p> {result.error}</p>}
         </Form>
      );
 }
 
 
 export const loginAction = async({request})=>{
+    // Form Data
     const data = await request.formData();
-    return {username:data.get('username'),password:data.get('password')};
+    const username = data.get('username');
+    const password = data.get('password');
+    
+    // Database Data
+    let userlist = await fetch('http://localhost:3000/Users');
+    userlist = await userlist.json();
+
+    // Check if username exist
+    let user = userlist.find((user) => user.username === username);
+    if(!user){
+        return {error:'No user with that username is found'};
+    }
+    // Check password
+    if(password !== user.password){
+        return{error:'Password is incorrect'}
+    }
+
+    return {login:true,username:username,userId:user.id};
+    
+
 }
 export default Login;
 
