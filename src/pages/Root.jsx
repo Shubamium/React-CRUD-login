@@ -12,10 +12,19 @@ const Root = () => {
     });
 
     useEffect(()=>{
-        if(userData.isAuthenticated){
-            localStorage.setItem('userdata',JSON.stringify(userData));
+        const userStatus = localStorage.getItem('userdata');
+        const userObj = JSON.parse(userStatus);
+        if(userObj.isAuthenticated == true){
+            console.log('a');
+            userDispatch({type:USER_ACTION.LOGIN,data:{username:userObj.username,userId:userObj.userId}})
         }
-    },[userData.isAuthenticated]);
+    },[]);
+
+    // useEffect(()=>{
+    //     if(userData.isAuthenticated){
+    //         localStorage.setItem('userdata',JSON.stringify(userData));
+    //     }
+    // },[userData.isAuthenticated]);
 
     return ( 
         <div id="main">

@@ -13,13 +13,20 @@ export default function userReducer(state,action){
 
     switch(action.type){
         case USER_ACTION.LOGIN:
-            return {
+            const data = {
                 username: action.data.username,
                 isAuthenticated:true,
                 userId: action.data.userId
             };
+            localStorage.setItem('userdata',JSON.stringify(data));
+            return data;
+
         case USER_ACTION.LOGOUT:
+            const dataString = JSON.stringify(baseLogin);
+            localStorage.setItem('userdata',dataString);
+
             return baseLogin;
+
         default:
             return state;
     }
