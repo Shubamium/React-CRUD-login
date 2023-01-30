@@ -9,6 +9,28 @@
         "id":1,
         "username":"root",
         "password":"123"
+       },
+       {
+        "id":2,
+        "username":"meow",
+        "password":"12345"
        }
+    ],
+    "Posts":[
+        {
+            "userId":0,
+            "post":"This is a post by user 0",
+            "likes":25
+        },
+        {
+            "userId":0,
+            "post":"This is also a post by user 0",
+            "likes":25
+        },
+        {
+            "userId":2,
+            "post":"This a post by user 2",
+            "likes":25
+        }
     ]
 }
