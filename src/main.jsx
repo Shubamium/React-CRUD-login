@@ -7,6 +7,7 @@ import Auth from './pages/Auth';
 import Dashboard from './pages/Dashboard';
 import Logout from './action/Logout';
 import Login, { loginAction } from './pages/Login';
+import Timeline, { timelineLoader } from './pages/Timeline';
 
 
 const router = createBrowserRouter(
@@ -18,7 +19,9 @@ const router = createBrowserRouter(
         <Route path='logout' element={<Logout />}/>
         <Route path='register' element={<Auth/>}/>
       </Route>
-      <Route path='dashboard' element={<Dashboard/>}></Route>
+      <Route path='dashboard' element={<Dashboard/>}>
+        <Route index element={<Timeline/>} loader={timelineLoader}></Route>
+      </Route>
     </Route>
   )
 );
