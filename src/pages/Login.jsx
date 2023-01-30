@@ -1,6 +1,5 @@
 import { useContext, useEffect } from "react";
-import { Form, Navigate, redirect, useActionData } from "react-router-dom";
-import authRedirect from "../action/AuthRedirect";
+import { Form, Navigate, useActionData } from "react-router-dom";
 import { USER_ACTION } from "../action/UserAction";
 import UserContext from "../context/userContext";
 
@@ -8,15 +7,18 @@ const Login = () => {
     const {userData,userDispatch} = useContext(UserContext);
     const result = useActionData();
 
+    useEffect(()=>{
+        if(result && result.login){
+            userDispatch({type:USER_ACTION.LOGIN,data:{userId:result.userId,username:result.username}});
+        }
+    },[result])
    
-
-    if(result && result.login){
-        userDispatch({type:USER_ACTION.LOGIN,data:{userId:result.userId,username:result.username}});
+    // useEffect(()=>{
+       
+    // },[userData]);
+    if(userData.isAuthenticated){
+        return <Navigate to="/dashboard" />
     }
-   if(userData.isAuthenticated){
-    return <Navigate to="/dashboard" />
-   }
-
     return ( 
         <Form action="/auth/login" method="POST">
             <input type="text" name="username" placeholder="username. . ."  required/>
