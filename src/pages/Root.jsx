@@ -34,7 +34,7 @@ const Root = () => {
                 :
                 <>
                 <NavLink to="auth/login">Sign In</NavLink>
-                <NavLink to="auth/register">Sign Up</NavLink>
+                <NavLink to="auth/signup">Sign Up</NavLink>
                 </>
                  }
             </nav>

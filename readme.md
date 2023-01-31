@@ -10,3 +10,5 @@ Concepts Included:
 -State Management with Context
 -Routing with React Router
 ```
+
+Explain each later

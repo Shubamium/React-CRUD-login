@@ -10,6 +10,8 @@ const Timeline = () => {
             <p>Loading . . . </p>
         );
     }
+
+    // let posts = useFetchPost();
     return (  
         <div>
             <p>Your Timeline!!!</p>

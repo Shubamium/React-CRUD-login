@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard';
 import Logout from './action/Logout';
 import Login, { loginAction } from './pages/Login';
 import Timeline, { timelineLoader } from './pages/Timeline';
+import Register, { registerAction } from './pages/Register';
 
 
 const router = createBrowserRouter(
@@ -17,7 +18,7 @@ const router = createBrowserRouter(
       <Route path='auth'>
         <Route path='login' index element={<Login/>} action={loginAction}/>
         <Route path='logout' element={<Logout />}/>
-        <Route path='register' element={<Auth/>}/>
+        <Route path='signup' element={<Register/>} action={registerAction}/>
       </Route>
       <Route path='dashboard' element={<Dashboard/>}>
         <Route index element={<Timeline/>} loader={timelineLoader}></Route>
