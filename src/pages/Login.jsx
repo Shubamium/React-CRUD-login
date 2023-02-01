@@ -37,20 +37,22 @@ export const loginAction = async({request})=>{
     const password = data.get('password');
     
     // Database Data
-    let userlist = await fetch('http://localhost:3000/Users');
+    let userlist = await fetch('http://localhost:3000/Users?username='+username);
     userlist = await userlist.json();
-
-    // Check if username exist
-    let user = userlist.find((user) => user.username === username);
-    if(!user){
+    if(userlist.length === 0){
         return {error:'No user with that username is found'};
     }
+    // Check if username exist
+    // let user = userlist.find((user) => user.username === username);
+    // if(!user){
+    //     return {error:'No user with that username is found'};
+    // }
     // Check password
-    if(password !== user.password){
+    if(password !== userlist[0].password){
         return{error:'Password is incorrect'}
     }
 
-    return {login:true,username:username,userId:user.id};
+    return {login:true,username:username,userId:userlist.id};
     
 
 }
