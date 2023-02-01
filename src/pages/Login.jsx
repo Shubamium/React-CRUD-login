@@ -52,7 +52,8 @@ export const loginAction = async({request})=>{
         return{error:'Password is incorrect'}
     }
 
-    return {login:true,username:username,userId:userlist.id};
+    console.log(userlist,"here");
+    return {login:true,username:username,userId:userlist[0].id};
     
 
 }
