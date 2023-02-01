@@ -21,7 +21,7 @@ const AddPost = ({
             },
             body:JSON.stringify(post)
         }).then(()=>{
-            updateList();
+            updateList(post);
             setCanSubmit(true);
         })
         setCanSubmit(false);        

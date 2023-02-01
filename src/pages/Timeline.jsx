@@ -12,26 +12,25 @@ const Timeline = () => {
     let posts = useLoaderData();
 
     let [postlist,setPl] = useState([]);
-    
-    useEffect(()=>{
-        setPl(posts);
-    },[posts]);
+    let newPost = [...posts, ...postlist]; 
 
-    console.log(postlist);
     if(navigation.state === "loading"){
         return (
             <p>Loading . . . </p>
         );
     }
+    console.log(newPost);
 
     return (  
         <div>
-            <AddPost posterId={userAuthState.userId} updateList={()=>{
-                // navigate('/dashboard');
-
+            <AddPost posterId={userAuthState.userId} updateList={(data)=>{
+                setPl((prev)=>{
+                    let old = [...prev, data];
+                    return old;
+                });
             }}/>
             <p>Your Timeline!!!</p>
-            {posts ? <PostLists posts={posts}></PostLists> : <p>Loading . . .</p>}    
+            {newPost ? <PostLists posts={newPost}></PostLists> : <p>Loading . . .</p>}    
         </div>
     );
 }

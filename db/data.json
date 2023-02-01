@@ -34,6 +34,11 @@
       "username": "nya",
       "password": "nyaho",
       "id": 6
+    },
+    {
+      "username": "shubamium",
+      "password": "Homepage123",
+      "id": 7
     }
   ],
   "Posts": [
@@ -171,9 +176,99 @@
     },
     {
       "userId": 4,
-      "post": {},
+      "post": "new post by evi\n",
       "likes": 0,
       "id": 29
+    },
+    {
+      "userId": 4,
+      "post": "qqqqeeee",
+      "likes": 0,
+      "id": 30
+    },
+    {
+      "userId": 4,
+      "post": "qweqweqweqwe",
+      "likes": 0,
+      "id": 31
+    },
+    {
+      "userId": 4,
+      "post": "aaaaaaaaaa",
+      "likes": 0,
+      "id": 32
+    },
+    {
+      "userId": 4,
+      "post": "EEEEE",
+      "likes": 0,
+      "id": 33
+    },
+    {
+      "userId": 4,
+      "post": "qweqweqweqwe",
+      "likes": 0,
+      "id": 34
+    },
+    {
+      "userId": 4,
+      "post": "123123123",
+      "likes": 0,
+      "id": 35
+    },
+    {
+      "userId": 4,
+      "post": "qwrqwrqwr",
+      "likes": 0,
+      "id": 36
+    },
+    {
+      "userId": 4,
+      "post": "eeeeeyyyy",
+      "likes": 0,
+      "id": 37
+    },
+    {
+      "userId": 4,
+      "post": "qwe",
+      "likes": 0,
+      "id": 38
+    },
+    {
+      "userId": 4,
+      "post": "Oh nice does this work now",
+      "likes": 0,
+      "id": 39
+    },
+    {
+      "userId": 4,
+      "post": "Meow!",
+      "likes": 0,
+      "id": 40
+    },
+    {
+      "userId": 4,
+      "post": "Ay yoopafawfawfawfawfawfafafaf",
+      "likes": 0,
+      "id": 41
+    },
+    {
+      "userId": 7,
+      "post": "it's working Ig\n",
+      "likes": 0,
+      "id": 42
+    },
+    {
+      "userId": 7,
+      "post": "HI Hello\n",
+      "likes": 0,
+      "id": 43
+    },
+    {
+      "userId": 7,
+      "post": "qweqwe",
+      "likes": 0,
+      "id": 44
     }
   ]
 }
