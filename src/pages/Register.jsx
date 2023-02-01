@@ -38,23 +38,34 @@ export const registerAction = async({request})=>{
     }
 
     // Get a list of all user
-    const userdata = await fetch('http://localhost:3000/Users');
-    const result = await userdata.json();
+    // const userdata = await fetch('http://localhost:3000/Users');
+    // const result = await userdata.json();
 
-    // Check if username not exist
-    const usernameExist = ()=>{
-        const res = result.find((user)=> user.username === username);
-        return res;
-    } 
-    let exist = usernameExist();
-    console.log(exist);
-    // If username does not exist
+    // Method one [Bad Example] the user would have to fetch the data of every single users
+    // // Check if username not exist
+    // const usernameExist = ()=>{
+    //     const res = result.find((user)=> user.username === username);
+    //     return res;
+    // } 
+    // let exist = usernameExist();
+    // // If username does not exist
+    // if(!exist){
+    //     return redirect('/');
+    // }else{
+    //     return({error:'Username already exist'});
+    // }
+
+    // Method two, [GOOD] Querying directly to the database
+    const userdata = await fetch('http://localhost:3000/Users?username=' + username);
+    const res = await userdata.json();
+
+    let exist = res.length !== 0;
+    console.log(res);
     if(!exist){
         return redirect('/');
     }else{
-        return({error:'Username already exist'});
+        return {error:'Username already exist!'};
     }
-
   
 
 }
