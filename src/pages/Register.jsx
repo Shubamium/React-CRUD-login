@@ -60,12 +60,33 @@ export const registerAction = async({request})=>{
     const res = await userdata.json();
 
     let exist = res.length !== 0;
-    console.log(res);
-    if(!exist){
-        return redirect('/');
-    }else{
+    
+    if(exist){
         return {error:'Username already exist!'};
     }
+
+    // Don't need this apparently
+    // Json Data Automatically add id so 
+    
+    // const prevUser = await fetch('http://localhost:3000/Users?_sort=userId&_order=desc&limit=1')
+    // let prevUserData = await prevUser.json();
+    // // let nextId = prevUserData.userId+1;
+    
+    const userRegis = {
+        // id:nextId,
+        username:username,
+        password:password,
+    }
+
+    fetch('http://localhost:3000/Users',{
+        method:'POST',
+        headers:{
+            "content-type":"application/json"
+        },
+        body:JSON.stringify(userRegis)
+    })
+
+    return redirect('/auth/login');
   
 
 }

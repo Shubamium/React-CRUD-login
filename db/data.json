@@ -1,39 +1,66 @@
 {
-    "Users":[
-       {
-        "id":0,
-        "username":"rin",
-        "password":"123"
-       },
-       {
-        "id":1,
-        "username":"root",
-        "password":"123"
-       },
-       {
-        "id":2,
-        "username":"meow",
-        "password":"12345"
-       }
-    ],
-    "Posts":[
-        {
-            "postId":0,
-            "userId":0,
-            "post":"This is a post by user 0",
-            "likes":25
-        },
-        {
-            "postId":1,
-            "userId":0,
-            "post":"This is also a post by user 0",
-            "likes":25
-        },
-        {
-            "postId":2,
-            "userId":2,
-            "post":"This a post by user 2",
-            "likes":25
-        }
-    ]
+  "Users": [
+    {
+      "id": 0,
+      "username": "rin",
+      "password": "123"
+    },
+    {
+      "id": 1,
+      "username": "root",
+      "password": "123"
+    },
+    {
+      "id": 2,
+      "username": "meow",
+      "password": "12345"
+    },
+    {
+      "userId": null,
+      "username": "Miku",
+      "password": "444",
+      "id": 3
+    },
+    {
+      "username": "evi",
+      "password": "144",
+      "id": 4
+    },
+    {
+      "username": "evie",
+      "password": "445",
+      "id": 5
+    },
+    {
+      "username": "nya",
+      "password": "nyaho",
+      "id": 6
+    }
+  ],
+  "Posts": [
+    {
+      "postId": 0,
+      "userId": 0,
+      "post": "This is a post by user 0",
+      "likes": 100
+    },
+    {
+      "postId": 1,
+      "userId": 0,
+      "post": "This is also a post by user 0",
+      "likes": 45
+    },
+    {
+      "postId": 2,
+      "userId": 2,
+      "post": "This a post by user 2",
+      "likes": 78
+    },
+    {
+      "postId": 1,
+      "userId": 2,
+      "post": "This a post by user 2",
+      "likes": 4
+    }
+  ]
 }
