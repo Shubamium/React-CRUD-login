@@ -19,7 +19,6 @@ const Timeline = () => {
             <p>Loading . . . </p>
         );
     }
-    console.log(newPost);
 
     return (  
         <div>

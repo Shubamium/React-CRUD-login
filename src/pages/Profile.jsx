@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData, useNavigation } from "react-router-dom";
+import AddPost from "../components/AddPost";
 import PostLists from "../components/PostList";
+import UserContext from "../context/userContext";
 import useFetchUser from "../hooks/useFetchUser";
 
 const Profile = () => {
     const navigation = useNavigation();
     const data = useLoaderData()[0];
-
+    const userAuthState = useContext(UserContext);
+   
     if(navigation.state === "loading"){
         return <p>Loading . . .</p>;
     }
@@ -20,11 +23,18 @@ const Profile = () => {
         }
         loadData();
     },[]);
-
+    const isUserProfile = userAuthState.userData.username === data.username;
     if(!data) return <></>;
     return ( 
         <div>
+
             <h2>Welcome to <Link to={`/profile/${data.username}`}>@{data.username}</Link>'s Profile page!</h2>
+            { isUserProfile && <AddPost posterId={data.id} updateList={(data)=>{
+                setUserPost((prev)=>{
+                    let old = [...prev, data];
+                    return old;
+                });
+            }}></AddPost>}
             <p>Posts by this user:</p>
             {userPost ? <PostLists posts={userPost}/> : <p>Loading . . .</p>}
         </div>

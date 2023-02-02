@@ -20,10 +20,13 @@ const AddPost = ({
                 'content-type':'application/json'
             },
             body:JSON.stringify(post)
-        }).then(()=>{
-            updateList(post);
+        }).then((data)=>{
+            return data.json();
+        }).then((result)=>{
+            updateList(result);
             setCanSubmit(true);
-        })
+            
+        });
         setCanSubmit(false);        
         e.preventDefault();
     }
