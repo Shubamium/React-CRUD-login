@@ -20,7 +20,8 @@ const Login = () => {
         return <Navigate to="/dashboard" />
     }
     return ( 
-        <Form action="/auth/login" method="POST">
+        <Form className="auth-form" action="/auth/login" method="POST">
+            <h2>Login </h2>
             <input type="text" name="username" placeholder="username. . ."  required/>
             <input type="password" name="password" placeholder="password. . ." required />
             <button type="submit">Login</button>

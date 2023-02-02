@@ -311,6 +311,18 @@
       "post": "Meow",
       "likes": 0,
       "id": 51
+    },
+    {
+      "userId": 4,
+      "post": "werrrrrrrrrrrrrrrrrrrrrrrrrr",
+      "likes": 0,
+      "id": 52
+    },
+    {
+      "userId": 4,
+      "post": "New year's eve",
+      "likes": 0,
+      "id": 53
     }
   ]
 }

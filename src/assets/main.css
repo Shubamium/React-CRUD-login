@@ -1,7 +1,153 @@
-nav a.active{
-    color:red;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,400;1,500;1,600;1,700;1,800&display=swap');
+*{
+    font-family: 'Montserrat',sans-serif;
+    /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
 }
 
-*{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
+body{
+    background-color: rgb(195, 208, 221);
+    text-align: center;
 }
+
+nav {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    justify-content: center;
+}
+nav a{
+    background-color: white;
+    color: black;
+    padding: .4em 2em;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.074);
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+    letter-spacing: 2px;
+}
+nav a:hover{
+    outline: 2px solid black;
+    background-color: silver;
+}
+
+nav a.active{
+    color: rgb(23, 78, 78);
+    background-color: peachpuff;
+}
+
+.add-post{
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin:  0 auto;
+    padding: 2em;
+    background-color: whitesmoke;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
+
+.add-post textarea{
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
+
+.add-post button{
+    background-color: rgb(227, 186, 149);
+    margin: 1em 0;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.074);
+    font-size: 1.4rem;
+    padding: .4em;
+    border-radius: 1em;
+}
+.add-post button:hover{
+    cursor: pointer;
+    background-color: peru;
+}
+
+.shadow{
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.074);
+    
+}
+
+
+.timeline{
+    background-color: rgb(228, 216, 216);
+}
+
+.post-lists{
+    background-color: rgb(179, 196, 210);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+}
+.post-lists .post{
+    background-color: aliceblue;
+    min-width: 800px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.074);
+    border-radius: 2em;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    -ms-border-radius: 2em;
+    -o-border-radius: 2em;
+    transition: all 250ms ease;
+    -webkit-transition: all 250ms ease;
+    -moz-transition: all 250ms ease;
+    -ms-transition: all 250ms ease;
+    -o-transition: all 250ms ease;
+}
+.post-lists .post:hover{
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.393);
+    transform: translateX(2%);
+    -webkit-transform: translateX(2%);
+    -moz-transform: translateX(2%);
+    -ms-transform: translateX(2%);
+    -o-transform: translateX(2%);
+}
+
+
+.auth-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.auth-form input{
+    padding: .5em;
+    border: none;
+    border-bottom: 2px solid grey;
+    background-color: transparent;
+}
+.auth-form input:focus{
+    background-color: whitesmoke;
+}
+
+.auth-form button{
+    font-size: 1.5rem;
+    max-width: 250px;
+    background-color: rgb(226, 152, 88);
+}
+.auth-form button:hover{
+    border: 2px black;
+    padding: 2em;
+}
+
+.auth-form{
+    padding: 2em;
+}
+

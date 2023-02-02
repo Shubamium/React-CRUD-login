@@ -21,7 +21,7 @@ const Root = () => {
 
     return ( 
         <div id="main">
-            <header>This is the header</header>
+            <header><h2>Basic-Barebone Twitter Clone</h2></header>
             <nav>
                 <NavLink to="/">Home</NavLink>
                 {

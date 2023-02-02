@@ -32,7 +32,7 @@ const AddPost = ({
     }
 
     return ( 
-        <form className="post" onSubmit={handlePost}>
+        <form className="add-post" onSubmit={handlePost}>
             <label htmlFor="post">Post a message:</label>
             <textarea onChange={(e)=> text = e.target.value} name="postText" id="post" cols="40" rows="5" style={{resize:'none'}}></textarea>
             <button type="submit" disabled={!canSubmit}>Post</button>

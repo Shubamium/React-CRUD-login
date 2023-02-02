@@ -11,7 +11,8 @@ const Register = () => {
  
 
     return ( 
-        <Form action="/auth/signup" method="POST">
+        <Form className="auth-form" action="/auth/signup" method="POST">
+            <h2>Sign Up</h2>
             <input type="text" name="username" placeholder="username. . ."  required/>
             <input type="password" name="password" placeholder="password. . ." required />
             <input type="password" name="c-password" placeholder="confirm password. . ." required />
