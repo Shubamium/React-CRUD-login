@@ -30,6 +30,7 @@ const Root = () => {
                     <>
                         <NavLink to="auth/logout">Logout</NavLink>
                         <NavLink to="dashboard">Dashboard</NavLink>
+                        <NavLink to={`profile/${userData.username}`}>Profile</NavLink>
                     </>
                 :
                 <>

@@ -9,7 +9,8 @@ import Logout from './action/Logout';
 import Login, { loginAction } from './pages/Login';
 import Timeline, { timelineLoader } from './pages/Timeline';
 import Register, { registerAction } from './pages/Register';
-
+import Profile, { profileLoader } from './pages/Profile';
+import './assets/main.css';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +23,8 @@ const router = createBrowserRouter(
       </Route>
       <Route path='dashboard' element={<Dashboard/>}>
         <Route index element={<Timeline/>} loader={timelineLoader}></Route>
+      </Route>
+      <Route path='profile/:username' element={<Profile/>} loader={profileLoader}>
       </Route>
     </Route>
   )

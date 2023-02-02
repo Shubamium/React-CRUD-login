@@ -5,7 +5,8 @@ const useFetchUser = (id) => {
     useEffect(
         ()=>{
             const getData = async()=>{
-                const response =  await fetch('http://localhost:3000/Users/' + id);
+                const fetchLink = 'http://localhost:3000/Users' + (typeof id === "string" ? `?username=${id}` : `/${id}`);
+                const response =  await fetch(fetchLink);
                 const result = await response.json();
                 setUserdata(result);
             }

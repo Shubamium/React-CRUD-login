@@ -269,6 +269,12 @@
       "post": "qweqwe",
       "likes": 0,
       "id": 44
+    },
+    {
+      "userId": 7,
+      "post": "Last post as shuba\n",
+      "likes": 0,
+      "id": 45
     }
   ]
 }
