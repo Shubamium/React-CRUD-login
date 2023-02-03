@@ -29,7 +29,7 @@ const Timeline = () => {
                 });
             }}/>
             <p>Your Timeline!!!</p>
-            {newPost ? <PostLists posts={newPost}></PostLists> : <p>Loading . . .</p>}    
+            {newPost ? <PostLists pagination={5} posts={newPost}></PostLists> : <p>Loading . . .</p>}    
         </div>
     );
 }
