@@ -38,14 +38,14 @@ const PostLists = ({posts, pagination}) => {
             {pagination && 
                 <div className="page-selector">
                     {/* Previous Button */}
-                    <button className="btn-page nav" onClick={()=>setPage(prev => prev > 0 ? prev-1: 0)}>←</button>
+                   {getPageCount() > 1 &&  <button className="btn-page nav" onClick={()=>setPage(prev => prev > 0 ? prev-1: 0)}>←</button>}
                         {/* Page Button */}
                         {pageButton.map((id)=>(
                             <button className={`btn-page${id-1 === page ? ' active' : ''}`} key={id} onClick={()=>{handleSetPage(id-1)}}>{id}</button>
                             ))
                         }
                     {/* Next Button */}
-                    <button className="btn-page nav"  onClick={()=>setPage(prev => prev >= getPageCount()-1 ? prev : prev+1)}>→</button>
+                {getPageCount() > 1 && <button className="btn-page nav"  onClick={()=>setPage(prev => prev >= getPageCount()-1 ? prev : prev+1)}>→</button>}
                 </div>
             }
             {postList.length > 0 ? postList.map((post)=>{

@@ -36,7 +36,7 @@ const Profile = () => {
                 });
             }}></AddPost>}
             <p>Posts by this user:</p>
-            {userPost ? <PostLists posts={userPost}/> : <p>Loading . . .</p>}
+            {userPost ? <PostLists pagination={10} posts={userPost}/> : <p>Loading . . .</p>}
         </div>
      );
 }
