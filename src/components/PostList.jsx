@@ -3,7 +3,7 @@ import Post from "./Post";
 
 const PostLists = ({posts, pagination}) => {
     const [postList,setPL] = useState([...posts].reverse());
-    const [page,setPage] = useState(1);
+    const [page,setPage] = useState(0);
     const [pageButton,setPageButton] = useState([]);
     const range = pagination || 5;
   
@@ -37,9 +37,15 @@ const PostLists = ({posts, pagination}) => {
         <div className="post-lists">
             {pagination && 
                 <div className="page-selector">
-                    {pageButton.map((id)=>(
-                        <button className={`btn-page ${id === page ? 'active' : ''}`} key={id} onClick={()=>{handleSetPage(id)}}>{id}</button>
-                    ))}
+                    {/* Previous Button */}
+                    <button onClick={()=>setPage(prev => prev > 0 ? prev-1: 0)}>←</button>
+                        {/* Page Button */}
+                        {pageButton.map((id)=>(
+                            <button className={`btn-page ${id === page ? 'active' : ''}`} key={id} onClick={()=>{handleSetPage(id-1)}}>{id}</button>
+                            ))
+                        }
+                    {/* Next Button */}
+                    <button onClick={()=>setPage(prev => prev >= getPageCount()-1 ? prev : prev+1)}>→</button>
                 </div>
             }
             {postList.length > 0 ? postList.map((post)=>{
