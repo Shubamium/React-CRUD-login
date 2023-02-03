@@ -28,7 +28,7 @@ const Timeline = () => {
                     return old;
                 });
             }}/>
-            <p>Your Timeline!!!</p>
+            <h2 className="section-title">Your Timeline!!!</h2>
             {newPost ? <PostLists pagination={5} posts={newPost}></PostLists> : <p>Loading . . .</p>}    
         </div>
     );
