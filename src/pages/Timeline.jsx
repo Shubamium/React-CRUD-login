@@ -21,7 +21,7 @@ const Timeline = () => {
     }
 
     return (  
-        <div>
+        <div className="timeline">
             <AddPost posterId={userAuthState.userId} updateList={(data)=>{
                 setPl((prev)=>{
                     let old = [...prev, data];

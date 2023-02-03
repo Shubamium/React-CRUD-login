@@ -44,6 +44,11 @@
       "username": "liusvinv@gmail.com",
       "password": "cRJkAbrZ94s65gK",
       "id": 8
+    },
+    {
+      "username": "Mika",
+      "password": "hiya",
+      "id": 9
     }
   ],
   "Posts": [
@@ -328,6 +333,18 @@
       "post": "New year's eve",
       "likes": 0,
       "id": 53
+    },
+    {
+      "userId": 4,
+      "post": "[[",
+      "likes": 0,
+      "id": 54
+    },
+    {
+      "userId": 5,
+      "post": "heyo",
+      "likes": 0,
+      "id": 55
     }
   ]
 }
