@@ -3,7 +3,6 @@ import { Link, useLoaderData, useNavigation } from "react-router-dom";
 import AddPost from "../components/AddPost";
 import PostLists from "../components/PostList";
 import UserContext from "../context/userContext";
-import useFetchUser from "../hooks/useFetchUser";
 
 const Profile = () => {
     const navigation = useNavigation();
@@ -23,6 +22,7 @@ const Profile = () => {
         }
         loadData();
     },[]);
+
     const isUserProfile = userAuthState.userData.username === data.username;
     if(!data) return <></>;
     return ( 

@@ -6,11 +6,11 @@ const PostLists = ({posts, pagination}) => {
     const [page,setPage] = useState(0);
     const [pageButton,setPageButton] = useState([]);
     const range = pagination || 5;
-  
+
     useEffect(()=>{
         console.log('change');
-        setPL(getPostRange(posts,page,range));
-    },[page]);
+        setPL(getPostRange([...posts].reverse(),page,range));
+    },[page,posts]);
 
     useEffect(()=>{
         setPageButton(Array.from({length:getPageCount()},(_,i)=> i+1));
